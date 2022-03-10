@@ -10,7 +10,8 @@ print(prpr.loc[:, ['one', 'three']])
 print(prpr.iloc[[0, 2], :])
 print(prpr.iloc[:, [0, 2]])
 # 筛选第1列中值大于2的所有行数据，保存到data1对象
-
+data1 = prpr.loc[prpr['two'].loc[:] > 2]
+print(data1)
 # 为data1添加一列数据，列索引为four，值都为10
 
 # 将data1所有值大于9的数据修改为8
