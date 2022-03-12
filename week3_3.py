@@ -13,7 +13,8 @@ print(prpr.iloc[:, [0, 2]])
 data1 = prpr.loc[prpr['two'].loc[:] > 2]
 print(data1)
 # 为data1添加一列数据，列索引为four，值都为10
-
+data1.insert(3, 'four', 10)
+print(data1)
 # 将data1所有值大于9的数据修改为8
 
 # 删除data1中第0行数据
