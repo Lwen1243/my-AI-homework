@@ -1,7 +1,8 @@
 # 创建并访问DataFrame对象
 import pandas as pd
+import numpy as np
 # 创建3×3DataFrame数据对象：数据内容为1-9；行索引为字符a，b，c；列索引为字符串one，two，three；
-data = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+data = np.array(np.arange(1, 10)).reshape(3, 3)
 prpr = pd.DataFrame(data, index=['a', 'b', 'c'], columns=['one', 'two', 'three'])
 print(prpr)
 # 查询列索引为two和three两列数据
@@ -16,5 +17,6 @@ print(data1)
 data1.insert(3, 'four', 10)
 print(data1)
 # 将data1所有值大于9的数据修改为8
-
+data1[data1.values > 8] = 10
+print(data1)
 # 删除data1中第0行数据
