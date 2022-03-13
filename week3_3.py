@@ -17,6 +17,9 @@ print(data1)
 data1.insert(3, 'four', 10)
 print(data1)
 # 将data1所有值大于9的数据修改为8
-data1[data1.values > 8] = 10
+for i in data1.index:
+    data1.loc[i, data1.loc[i].values > 9] = 8
 print(data1)
 # 删除data1中第0行数据
+tmp = data1.drop(list(data1.index[0]), axis=0)
+print(tmp)
