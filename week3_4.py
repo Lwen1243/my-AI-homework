@@ -1,5 +1,5 @@
 # 读取文件并绘图
-import matplotlib as plt
+import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 
@@ -15,10 +15,10 @@ print(f"全国GDP总量为:{pg['GDP'].sum()}")
 tmp = pg['GDP'].corr(pg['Population'])
 print(f"人口和GDP的相关系数为{tmp}")
 # 筛选出GDP>10000万亿的省份，显示省份和GDP值
-print(pg[['GDP']].loc[pg['GDP'] > 10000])
-# 将这些省份及GDP值保存到GDPTop.csv的文件中
 ans = pg[['GDP']].loc[pg['GDP'] > 10000]
 print(ans)
+# 将这些省份及GDP值保存到GDPTop.csv的文件中
+ans.to_csv('GDPTop.csv', mode='w', header=True, index=False)
 # 绘制GDP>10000亿的GDP柱状图（如下图），并保存为JPG图像
 plt.rcParams['font.sans-serif'] = ['Kaiti']
 ans.plot(kind='bar', title='Top GDP', linewidth=2, color='g', grid=True, alpha=0.9, use_index=True)
