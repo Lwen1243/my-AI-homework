@@ -1,7 +1,6 @@
 # 读取文件并绘图
 import matplotlib.pyplot as plt
 import pandas as pd
-import numpy as np
 
 # 读取provinceGDP.csv文件中的各省GDP数据，保存到DataFrame对象
 pg = pd.read_csv('/home/aistudio/data/data12847/ProvinceGDP.csv', index_col='Province')
